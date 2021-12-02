@@ -7,7 +7,7 @@ namespace Open_Lab_10._04
 {
     public class Book
     {
-        public string Title;
+        public string Title { set; get; }
 
         private int pages;
         public int Pages
@@ -28,8 +28,8 @@ namespace Open_Lab_10._04
 
         }
 
-        public string category;
-        public string author;
+        public string Category { set; get; }
+        public string Author { set; get; }
         
         private int releaseDate;
         public int ReleaseDate
@@ -58,13 +58,38 @@ namespace Open_Lab_10._04
         }
 
 
+        public void konstruktor1()
+        {
+            Title = "-1";
+            ReleaseDate = -1;
+            Author = "-1";
+            Pages = -1;
+            Category = "-1";
+        }
+
+        public void konstruktor2(string titleofbook, int pagesofbook)
+        {
+            Title = titleofbook;
+            ReleaseDate = -1;
+            Author = "-1";
+            Pages = pagesofbook;
+            Category = "-1";
+        }
+        public void konstruktor3(string titleofbook, string authorofbook, string categoryofbook, int pagesofbook, int releasedateofbook)
+        {
+            Title = titleofbook;
+            ReleaseDate = releasedateofbook;
+            Author = authorofbook;
+            Pages = pagesofbook;
+            Category = categoryofbook;
+        }
         public void writeall()
         {
 
             Console.WriteLine(Title);
             Console.WriteLine(Pages);
-            Console.WriteLine(category);
-            Console.WriteLine(author);
+            Console.WriteLine(Category);
+            Console.WriteLine(Author);
             Console.WriteLine(ReleaseDate);
         }
     }
